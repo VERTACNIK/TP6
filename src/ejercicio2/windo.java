@@ -79,6 +79,7 @@ public class windo extends javax.swing.JFrame {
 
         jMenu1.setText("Administracion");
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/agregar.png"))); // NOI18N
         jMenuItem4.setText("agregar producto");
         jMenu1.add(jMenuItem4);
 
