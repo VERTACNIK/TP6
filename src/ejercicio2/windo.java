@@ -4,6 +4,11 @@
  */
 package ejercicio2;
 
+import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Rafael
@@ -17,7 +22,23 @@ public class windo extends javax.swing.JFrame {
      */
     public windo() {
         initComponents();
+        Ventana();
+ 
     }
+        public void Ventana() {
+        
+       ImageIcon imagen = new ImageIcon(getClass().getResource("/assets/fondosuper.jpg"));
+       JLabel labelImagen = new JLabel(imagen);
+       labelImagen.setBounds(0, 0, 554, 554);
+       jDesktopPane1.add(labelImagen);
+        add(jDesktopPane1);
+
+        setSize(554,554);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,16 +61,17 @@ public class windo extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(554, 554));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 539, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 438, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Administracion");
@@ -122,6 +144,7 @@ public class windo extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new windo().setVisible(true));
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
