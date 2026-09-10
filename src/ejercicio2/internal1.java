@@ -6,14 +6,14 @@ package ejercicio2;
 
 /**
  *
- * @author verta
+ * @author Rafael
  */
-public class Window extends javax.swing.JInternalFrame {
+public class internal1 extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Window
+     * Creates new form internal1
      */
-    public Window() {
+    public internal1() {
         initComponents();
     }
 
