@@ -4,6 +4,7 @@
  */
 package ejercicio2;
 
+import java.util.TreeSet;
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
@@ -20,6 +21,8 @@ public class windo extends javax.swing.JFrame {
     /**
      * Creates new form windo
      */
+    private TreeSet<Producto> listaProductos = new TreeSet<>();
+    
     public windo() {
         initComponents();
         Ventana();
@@ -77,6 +80,7 @@ public class windo extends javax.swing.JFrame {
         jMenu1.setText("Administracion");
 
         jMenuItem4.setText("agregar producto");
+        jMenuItem4.addActionListener(this::jMenuItem4ActionPerformed);
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setText("eliminar producto");
@@ -120,6 +124,15 @@ public class windo extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        jDesktopPane1.removeAll();
+        jDesktopPane1.repaint();
+        agregar va  = new agregar();
+        va.setVisible(true);
+        jDesktopPane1.add(va);
+        jDesktopPane1.moveToFront(va);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
