@@ -56,15 +56,18 @@ public class windo extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(554, 554));
+        setMinimumSize(new java.awt.Dimension(554, 554));
         setPreferredSize(new java.awt.Dimension(554, 554));
+        setResizable(false);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -74,20 +77,23 @@ public class windo extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 531, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Administracion");
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/agregar.png"))); // NOI18N
         jMenuItem4.setText("agregar producto");
         jMenuItem4.addActionListener(this::jMenuItem4ActionPerformed);
         jMenu1.add(jMenuItem4);
 
-        jMenuItem5.setText("eliminar producto");
-        jMenu1.add(jMenuItem5);
-
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/modi.png"))); // NOI18N
         jMenuItem6.setText("modificar produto");
         jMenu1.add(jMenuItem6);
+
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
+        jMenuItem5.setText("eliminar producto");
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 
