@@ -53,8 +53,8 @@ public class windo extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -80,11 +80,13 @@ public class windo extends javax.swing.JFrame {
         jMenuItem4.setText("agregar producto");
         jMenu1.add(jMenuItem4);
 
-        jMenuItem5.setText("eliminar producto");
-        jMenu1.add(jMenuItem5);
-
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/modi.png"))); // NOI18N
         jMenuItem6.setText("modificar produto");
         jMenu1.add(jMenuItem6);
+
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
+        jMenuItem5.setText("eliminar producto");
+        jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
 

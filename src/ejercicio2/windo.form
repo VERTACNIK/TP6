@@ -17,14 +17,20 @@
                 <Property name="text" type="java.lang.String" value="agregar producto"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="eliminar producto"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/assets/modi.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="modificar produto"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/assets/unaX.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="eliminar producto"/>
               </Properties>
             </MenuItem>
           </SubComponents>
