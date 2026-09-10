@@ -14,7 +14,7 @@ import javax.swing.JLabel;
  * @author Rafael
  */
 public class windo extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(windo.class.getName());
 
     /**
@@ -23,22 +23,22 @@ public class windo extends javax.swing.JFrame {
     public windo() {
         initComponents();
         Ventana();
- 
+
     }
-        public void Ventana() {
-        
-       ImageIcon imagen = new ImageIcon(getClass().getResource("/assets/fondosuper.jpg"));
-       JLabel labelImagen = new JLabel(imagen);
-       labelImagen.setBounds(0, 0, 554, 554);
-       jDesktopPane1.add(labelImagen);
+
+    public void Ventana() {
+
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/assets/fondosuper.jpg"));
+        JLabel labelImagen = new JLabel(imagen);
+        labelImagen.setBounds(0, 0, 554, 554);
+        jDesktopPane1.add(labelImagen);
         add(jDesktopPane1);
 
-        setSize(554,554);
+        setSize(554, 554);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -144,7 +144,7 @@ public class windo extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new windo().setVisible(true));
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

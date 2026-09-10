@@ -8,12 +8,12 @@ package ejercicio2;
  *
  * @author Rafael
  */
-public class internal1 extends javax.swing.JInternalFrame {
+public class consultarubro extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form internal1
+     * Creates new form consultarubro
      */
-    public internal1() {
+    public consultarubro() {
         initComponents();
     }
 
