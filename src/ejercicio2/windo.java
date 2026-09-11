@@ -66,7 +66,6 @@ public class windo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(875, 680));
         setMinimumSize(new java.awt.Dimension(554, 554));
-        setPreferredSize(new java.awt.Dimension(875, 680));
         setResizable(false);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -128,7 +127,15 @@ public class windo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        jDesktopPane1.removeAll();
+        jDesktopPane1.repaint();
+        consultanombre ve  = new consultanombre();
+        ve.setVisible(true);
+        jDesktopPane1.add(ve);
+        jDesktopPane1.moveToFront(ve);
+        
+        
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -163,7 +170,11 @@ public class windo extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new windo().setVisible(true));
-
+        
+        Producto a = new Producto(5, 2000, 1, "un prducto", "Comestible");
+        Producto b = new Producto(4, 3000, 2, "un alfajor", "Comestible");
+        Producto c = new Producto(8, 1500, 3, "un cafe", "Comestible");
+ 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
