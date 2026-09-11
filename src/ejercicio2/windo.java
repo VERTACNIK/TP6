@@ -33,11 +33,11 @@ public class windo extends javax.swing.JFrame {
 
         ImageIcon imagen = new ImageIcon(getClass().getResource("/assets/fondosuper.jpg"));
         JLabel labelImagen = new JLabel(imagen);
-        labelImagen.setBounds(0, 0, 554, 554);
+        labelImagen.setBounds(0, 0, 800, 600);
         jDesktopPane1.add(labelImagen);
         add(jDesktopPane1);
 
-        setSize(554, 554);
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -64,20 +64,20 @@ public class windo extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(554, 554));
+        setMaximumSize(new java.awt.Dimension(875, 680));
         setMinimumSize(new java.awt.Dimension(554, 554));
-        setPreferredSize(new java.awt.Dimension(554, 554));
+        setPreferredSize(new java.awt.Dimension(875, 680));
         setResizable(false);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 875, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGap(0, 657, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Administracion");
@@ -134,7 +134,7 @@ public class windo extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
-        agregar va  = new agregar();
+        agregar va  = new agregar(listaProductos);
         va.setVisible(true);
         jDesktopPane1.add(va);
         jDesktopPane1.moveToFront(va);

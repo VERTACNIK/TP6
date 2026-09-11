@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public class Producto {
+public class Producto implements Comparable<Producto> {
 
     private int stock;
     private int precio;
@@ -66,6 +66,11 @@ public class Producto {
         this.rubro = rubro;
     }
 
+    
+    public int compareTo(Producto otro) {
+        // Ordena el TreeSet automáticamente por id_prod de forma ascendente
+        return Integer.compare(this.id_prod, otro.id_prod);
+    }
     
     @Override
     public boolean equals(Object obj) {
