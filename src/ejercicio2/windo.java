@@ -67,11 +67,11 @@ public class windo extends javax.swing.JFrame {
         dtpEscritorio.setLayout(dtpEscritorioLayout);
         dtpEscritorioLayout.setHorizontalGroup(
             dtpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 875, Short.MAX_VALUE)
+            .addGap(0, 863, Short.MAX_VALUE)
         );
         dtpEscritorioLayout.setVerticalGroup(
             dtpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 657, Short.MAX_VALUE)
+            .addGap(0, 645, Short.MAX_VALUE)
         );
 
         administracionMenu.setText("Administración");
@@ -111,11 +111,17 @@ public class windo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dtpEscritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dtpEscritorio)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dtpEscritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dtpEscritorio)
+                .addContainerGap())
         );
 
         pack();

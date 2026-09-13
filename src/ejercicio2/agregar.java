@@ -6,6 +6,8 @@ package ejercicio2;
 
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import jdk.jfr.Description;
 
 /**
  *
@@ -13,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class agregar extends javax.swing.JInternalFrame {
 
+    private DefaultTableModel modelo = new DefaultTableModel();
     private TreeSet<Producto> listaProductos;
 
     /**
@@ -23,7 +26,21 @@ public class agregar extends javax.swing.JInternalFrame {
     public agregar(TreeSet<Producto> listaProductos) {
         initComponents();
         this.listaProductos = listaProductos;
-        
+        armarCabecera();
+    }
+
+    private void armarCabecera() {
+        modelo.addColumn("Codigo ID");
+        modelo.addColumn("Descripcion");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Stock");
+        modelo.addColumn("Rubro");
+        jtLista.setModel(modelo);
+
+    }
+
+    private void cargarDatos(Producto producto) {
+        modelo.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
     }
 
     /**
@@ -35,8 +52,6 @@ public class agregar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAgregar = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -48,21 +63,20 @@ public class agregar extends javax.swing.JInternalFrame {
         cbRubro = new javax.swing.JComboBox<>();
         txtId = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtLista = new javax.swing.JTable();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar Producto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        setBorder(null);
         setClosable(true);
         setTitle("De todo S.A.: Productos");
         setMinimumSize(new java.awt.Dimension(539, 562));
-        setPreferredSize(new java.awt.Dimension(539, 562));
+        setPreferredSize(new java.awt.Dimension(539, 590));
         setRequestFocusEnabled(false);
 
-        btnAgregar.setText("Agregar producto");
-        btnAgregar.addActionListener(this::btnAgregarActionPerformed);
-
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel3.setText("Descripcion");
 
@@ -85,32 +99,47 @@ public class agregar extends javax.swing.JInternalFrame {
         });
         txtId.addActionListener(this::txtIdActionPerformed);
 
+        btnAgregar.setText("Agregar producto");
+        btnAgregar.addActionListener(this::btnAgregarActionPerformed);
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(46, 46, 46))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5))
-                        .addGap(67, 67, 67)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDescripcion)
-                    .addComponent(jsStock, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
-                    .addComponent(cbRubro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtId)
-                    .addComponent(txtPrecio))
-                .addGap(14, 14, 14))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(46, 46, 46))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(67, 67, 67)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDescripcion)
+                            .addComponent(jsStock, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                            .addComponent(cbRubro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtId)
+                            .addComponent(txtPrecio)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAgregar, btnLimpiar});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cbRubro, jsStock});
 
@@ -134,75 +163,90 @@ public class agregar extends javax.swing.JInternalFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jsStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jsStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(230, 230, 230)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(cbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbRubro, jsStock, txtDescripcion, txtId});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregar, btnLimpiar});
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Productos Agregados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jScrollPane1.setViewportView(jtLista);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(483, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAgregar, btnLimpiar});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAgregar, btnLimpiar});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        try{
-            
-        
-        int idCodigo = Integer.parseInt(txtId.getText());
-        int stock = (Integer) jsStock.getValue();
-        int precio = Integer.parseInt(txtPrecio.getText());
-        String descripcion = txtDescripcion.getText();
-        String rubro = (String) cbRubro.getSelectedItem();
-        
-        Producto p = new Producto(stock, precio, idCodigo, descripcion, rubro);
-        
-        boolean agregado = this.listaProductos.add(p);
-        
-        if (agregado) {
-            JOptionPane.showMessageDialog(this, "Producto agregado con exito");
-        }else {
-            JOptionPane.showMessageDialog(this, "Ya existe un producto con ese ID.", "Duplicado", JOptionPane.WARNING_MESSAGE);
-        }
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(this, "Ingrese valores numericos validos.", "Error", JOptionPane.ERROR_MESSAGE);
+        try {
+            int idCodigo = Integer.parseInt(txtId.getText());
+            int stock = (Integer) jsStock.getValue();
+            int precio = Integer.parseInt(txtPrecio.getText());
+            String descripcion = txtDescripcion.getText();
+            String rubro = (String) cbRubro.getSelectedItem();
+            Producto p = new Producto(stock, precio, idCodigo, descripcion, rubro);
+            boolean agregado = this.listaProductos.add(p);
+
+            if (agregado) {
+                cargarDatos(p);
+                JOptionPane.showMessageDialog(this, "Producto agregado con exito");
+            } else {
+                JOptionPane.showMessageDialog(this, "Ya existe un producto con ese ID.", "Duplicado", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            if (txtId.getText().isEmpty() || txtDescripcion.getText().isEmpty() || txtPrecio.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
+            } else {
+                JOptionPane.showMessageDialog(this, "Ingrese valores numericos validos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -223,21 +267,8 @@ public class agregar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void txtIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIdFocusLost
-        try {
-            // Verificamos solo si el campo no está vacío
-            if (!txtId.getText().isEmpty()) {
-                int id = Integer.parseInt(txtId.getText());
-            }
-        } catch (NumberFormatException e) {
-            javax.swing.JOptionPane.showMessageDialog(null, 
-                "El id ingresado es incorrecto. Debe ser un número entero.", 
-                "Error de formato", 
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-            
-            // Devuelve el foco y selecciona el texto erróneo para facilitar la corrección
-            txtPrecio.requestFocus();
-            txtPrecio.selectAll();
-        }
+
+
     }//GEN-LAST:event_txtIdFocusLost
 
 
@@ -251,7 +282,10 @@ public class agregar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jsStock;
+    private javax.swing.JTable jtLista;
     private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtPrecio;
