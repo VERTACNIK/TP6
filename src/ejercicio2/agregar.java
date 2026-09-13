@@ -51,6 +51,7 @@ public class agregar extends javax.swing.JInternalFrame {
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar Producto", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         setClosable(true);
+        setTitle("De todo S.A.: Productos");
         setMinimumSize(new java.awt.Dimension(539, 562));
         setPreferredSize(new java.awt.Dimension(539, 562));
         setRequestFocusEnabled(false);

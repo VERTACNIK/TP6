@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ejercicio2;
 
 import java.util.TreeSet;
 import javax.swing.ImageIcon;
-import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -34,8 +29,8 @@ public class windo extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon(getClass().getResource("/assets/fondosuper.jpg"));
         JLabel labelImagen = new JLabel(imagen);
         labelImagen.setBounds(0, 0, 800, 600);
-        jDesktopPane1.add(labelImagen);
-        add(jDesktopPane1);
+        dtpEscritorio.add(labelImagen);
+        add(dtpEscritorio);
 
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,100 +47,100 @@ public class windo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        dtpEscritorio = new javax.swing.JDesktopPane();
+        MenuBarNavigator = new javax.swing.JMenuBar();
+        administracionMenu = new javax.swing.JMenu();
+        agregarMenuItem = new javax.swing.JMenuItem();
+        modificarMenuItem = new javax.swing.JMenuItem();
+        eliminarMenuItem = new javax.swing.JMenuItem();
+        consultasMenu = new javax.swing.JMenu();
+        nombreMenuItem = new javax.swing.JMenuItem();
+        precioMenuItem = new javax.swing.JMenuItem();
+        rubroMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(875, 680));
         setMinimumSize(new java.awt.Dimension(554, 554));
         setResizable(false);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout dtpEscritorioLayout = new javax.swing.GroupLayout(dtpEscritorio);
+        dtpEscritorio.setLayout(dtpEscritorioLayout);
+        dtpEscritorioLayout.setHorizontalGroup(
+            dtpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 875, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        dtpEscritorioLayout.setVerticalGroup(
+            dtpEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 657, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Administracion");
+        administracionMenu.setText("Administración");
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/agregar.png"))); // NOI18N
-        jMenuItem4.setText("agregar producto");
-        jMenuItem4.addActionListener(this::jMenuItem4ActionPerformed);
-        jMenu1.add(jMenuItem4);
+        agregarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/agregar.png"))); // NOI18N
+        agregarMenuItem.setText("Agregar productos");
+        agregarMenuItem.addActionListener(this::agregarMenuItemActionPerformed);
+        administracionMenu.add(agregarMenuItem);
 
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/modi.png"))); // NOI18N
-        jMenuItem6.setText("modificar produto");
-        jMenu1.add(jMenuItem6);
+        modificarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/modi.png"))); // NOI18N
+        modificarMenuItem.setText("Modificar produtos");
+        administracionMenu.add(modificarMenuItem);
 
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
-        jMenuItem5.setText("eliminar producto");
-        jMenu1.add(jMenuItem5);
+        eliminarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
+        eliminarMenuItem.setText("Eliminar productos");
+        administracionMenu.add(eliminarMenuItem);
 
-        jMenuBar1.add(jMenu1);
+        MenuBarNavigator.add(administracionMenu);
 
-        jMenu2.setText("consultas");
+        consultasMenu.setText("Consultas");
 
-        jMenuItem1.setText("consulta por nombre");
-        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
-        jMenu2.add(jMenuItem1);
+        nombreMenuItem.setText("Consulta por nombre");
+        nombreMenuItem.addActionListener(this::nombreMenuItemActionPerformed);
+        consultasMenu.add(nombreMenuItem);
 
-        jMenuItem2.setText("consulta por precio");
-        jMenu2.add(jMenuItem2);
+        precioMenuItem.setText("Consulta por precio");
+        consultasMenu.add(precioMenuItem);
 
-        jMenuItem3.setText("consulta por rubro");
-        jMenu2.add(jMenuItem3);
+        rubroMenuItem.setText("Consulta por rubro");
+        consultasMenu.add(rubroMenuItem);
 
-        jMenuBar1.add(jMenu2);
+        MenuBarNavigator.add(consultasMenu);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBarNavigator);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(dtpEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(dtpEscritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        jDesktopPane1.removeAll();
-        jDesktopPane1.repaint();
+    private void nombreMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreMenuItemActionPerformed
+        dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
         consultanombre ve  = new consultanombre();
         ve.setVisible(true);
-        jDesktopPane1.add(ve);
-        jDesktopPane1.moveToFront(ve);
+        dtpEscritorio.add(ve);
+        dtpEscritorio.moveToFront(ve);
         
         
         
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_nombreMenuItemActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        jDesktopPane1.removeAll();
-        jDesktopPane1.repaint();
+    private void agregarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMenuItemActionPerformed
+        dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
         agregar va  = new agregar(listaProductos);
         va.setVisible(true);
-        jDesktopPane1.add(va);
-        jDesktopPane1.moveToFront(va);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+        dtpEscritorio.add(va);
+        dtpEscritorio.moveToFront(va);
+    }//GEN-LAST:event_agregarMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,15 +173,15 @@ public class windo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuBar MenuBarNavigator;
+    private javax.swing.JMenu administracionMenu;
+    private javax.swing.JMenuItem agregarMenuItem;
+    private javax.swing.JMenu consultasMenu;
+    private javax.swing.JDesktopPane dtpEscritorio;
+    private javax.swing.JMenuItem eliminarMenuItem;
+    private javax.swing.JMenuItem modificarMenuItem;
+    private javax.swing.JMenuItem nombreMenuItem;
+    private javax.swing.JMenuItem precioMenuItem;
+    private javax.swing.JMenuItem rubroMenuItem;
     // End of variables declaration//GEN-END:variables
 }
