@@ -4,6 +4,7 @@
  */
 package ejercicio2;
 
+import static ejercicio2.windo.listaProductos;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +17,6 @@ import jdk.jfr.Description;
 public class agregar extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
-    private TreeSet<Producto> listaProductos;
 
     /**
      * Creates new form internal1
@@ -25,8 +25,8 @@ public class agregar extends javax.swing.JInternalFrame {
      */
     public agregar(TreeSet<Producto> listaProductos) {
         initComponents();
-        this.listaProductos = listaProductos;
         armarCabecera();
+        recorrerTabla();
     }
 
     private void armarCabecera() {
@@ -41,6 +41,12 @@ public class agregar extends javax.swing.JInternalFrame {
 
     private void cargarDatos(Producto producto) {
         modelo.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+    }
+    
+    private void recorrerTabla(){
+        for (Producto producto : listaProductos) {
+            modelo.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+        }
     }
 
     /**
@@ -233,7 +239,7 @@ public class agregar extends javax.swing.JInternalFrame {
             String descripcion = txtDescripcion.getText();
             String rubro = (String) cbRubro.getSelectedItem();
             Producto p = new Producto(stock, precio, idCodigo, descripcion, rubro);
-            boolean agregado = this.listaProductos.add(p);
+            boolean agregado = listaProductos.add(p);
 
             if (agregado) {
                 cargarDatos(p);

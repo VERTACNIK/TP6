@@ -1,6 +1,7 @@
 
 package ejercicio2;
 
+import static ejercicio2.windo.listaProductos;
 import java.util.Iterator;
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +14,6 @@ import javax.swing.table.TableColumnModel;
 public class consultanombre extends javax.swing.JInternalFrame {
 
     DefaultTableModel table = new DefaultTableModel();
-    private TreeSet<Producto> listaProductos;
 
     /**
      * Creates new form conslutanombre
@@ -25,18 +25,18 @@ public class consultanombre extends javax.swing.JInternalFrame {
         table.addColumn("Precio");
         table.addColumn("Rubro");
         jTable1.setModel(table);
-
-//        for (Iterator<Producto> it = listaProductos.iterator(); it.hasNext();) {
-//            Producto lista = it.next();
-//            table.addRow(new Object[]{
-//                lista.getId_prod(),
-//                lista.getDescripcion(),
-//                lista.getPrecio(),
-//                lista.getRubro()
-//            });
-//        }
+        
+        Iterator<Producto> it = listaProductos.iterator();
+        
+        recorrerTabla();
     }
 
+    private void recorrerTabla(){
+        for (Producto producto : listaProductos) {
+            table.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

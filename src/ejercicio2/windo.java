@@ -16,7 +16,7 @@ public class windo extends javax.swing.JFrame {
     /**
      * Creates new form windo
      */
-    private TreeSet<Producto> listaProductos = new TreeSet<>();
+    public static TreeSet<Producto> listaProductos = new TreeSet<>();
     
     public windo() {
         initComponents();
@@ -175,6 +175,9 @@ public class windo extends javax.swing.JFrame {
         Producto a = new Producto(5, 2000, 1, "un prducto", "Comestible");
         Producto b = new Producto(4, 3000, 2, "un alfajor", "Comestible");
         Producto c = new Producto(8, 1500, 3, "un cafe", "Comestible");
+        listaProductos.add(a);
+        listaProductos.add(b);
+        listaProductos.add(c);
  
     }
 
