@@ -21,7 +21,6 @@ public class windo extends javax.swing.JFrame {
     public windo() {
         initComponents();
         Ventana();
-
     }
 
     public void Ventana() {
@@ -31,7 +30,6 @@ public class windo extends javax.swing.JFrame {
         labelImagen.setBounds(0, 0, 800, 600);
         dtpEscritorio.add(labelImagen);
         add(dtpEscritorio);
-
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -99,9 +97,11 @@ public class windo extends javax.swing.JFrame {
         consultasMenu.add(nombreMenuItem);
 
         precioMenuItem.setText("Consulta por precio");
+        precioMenuItem.addActionListener(this::precioMenuItemActionPerformed);
         consultasMenu.add(precioMenuItem);
 
         rubroMenuItem.setText("Consulta por rubro");
+        rubroMenuItem.addActionListener(this::rubroMenuItemActionPerformed);
         consultasMenu.add(rubroMenuItem);
 
         MenuBarNavigator.add(consultasMenu);
@@ -135,9 +135,6 @@ public class windo extends javax.swing.JFrame {
         ve.setVisible(true);
         dtpEscritorio.add(ve);
         dtpEscritorio.moveToFront(ve);
-        
-        
-        
     }//GEN-LAST:event_nombreMenuItemActionPerformed
 
     private void agregarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMenuItemActionPerformed
@@ -150,12 +147,31 @@ public class windo extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarMenuItemActionPerformed
 
     private void eliminarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuItemActionPerformed
-dtpEscritorio.removeAll();
+        dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        eliminar vistaEliminar  = new eliminar();
+        eliminar vistaEliminar = new eliminar();
         vistaEliminar.setVisible(true);
         dtpEscritorio.add(vistaEliminar);
-        dtpEscritorio.moveToFront(vistaEliminar);    }//GEN-LAST:event_eliminarMenuItemActionPerformed
+        dtpEscritorio.moveToFront(vistaEliminar);
+    }//GEN-LAST:event_eliminarMenuItemActionPerformed
+
+    private void rubroMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rubroMenuItemActionPerformed
+        dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
+        consultarubro ve = new consultarubro();
+        ve.setVisible(true);
+        dtpEscritorio.add(ve);
+        dtpEscritorio.moveToFront(ve);
+    }//GEN-LAST:event_rubroMenuItemActionPerformed
+
+    private void precioMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioMenuItemActionPerformed
+        dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
+        consultaprecio ve = new consultaprecio();
+        ve.setVisible(true);
+        dtpEscritorio.add(ve);
+        dtpEscritorio.moveToFront(ve);
+    }//GEN-LAST:event_precioMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,7 +197,7 @@ dtpEscritorio.removeAll();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new windo().setVisible(true));
         
-        Producto a = new Producto(5, 2000, 1, "un prducto", "Comestible");
+        Producto a = new Producto(5, 2000, 1, "un chupetin", "Comestible");
         Producto b = new Producto(4, 3000, 2, "un alfajor", "Comestible");
         Producto c = new Producto(8, 1500, 3, "un cafe", "Comestible");
         listaProductos.add(a);
