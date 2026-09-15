@@ -25,6 +25,10 @@ public class Producto implements Comparable<Producto> {
         this.descripcion = descripcion;
         this.rubro = rubro;
     }
+    
+    public Producto(int id_prod) {
+    this.id_prod = id_prod;
+}
 
     public int getStock() {
         return stock;

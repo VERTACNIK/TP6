@@ -4,17 +4,51 @@
  */
 package ejercicio2;
 
+import static ejercicio2.windo.listaProductos;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Rafael
  */
 public class eliminar extends javax.swing.JInternalFrame {
 
+    private DefaultTableModel modelo = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    ;
+
+    };
+
     /**
      * Creates new form eliminar
      */
     public eliminar() {
         initComponents();
+        armarCabecera();
+        recorrerTabla();
+    }
+
+    private void armarCabecera() {
+        modelo.addColumn("Codigo ID");
+        modelo.addColumn("Descripcion");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Stock");
+        modelo.addColumn("Rubro");
+        jtTabla.setModel(modelo);
+
+    }
+
+    private void cargarDatos(Producto producto) {
+        modelo.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+    }
+
+    private void recorrerTabla() {
+        for (Producto producto : listaProductos) {
+            modelo.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+        }
     }
 
     /**
@@ -26,21 +60,110 @@ public class eliminar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpButton = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jpTabla = new javax.swing.JPanel();
+        jspTabla = new javax.swing.JScrollPane();
+        jtTabla = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setPreferredSize(new java.awt.Dimension(539, 590));
+
+        jButton1.setText("Borrar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        javax.swing.GroupLayout jpButtonLayout = new javax.swing.GroupLayout(jpButton);
+        jpButton.setLayout(jpButtonLayout);
+        jpButtonLayout.setHorizontalGroup(
+            jpButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpButtonLayout.createSequentialGroup()
+                .addGap(186, 186, 186)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpButtonLayout.setVerticalGroup(
+            jpButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpButtonLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jtTabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Codigo ID", "Descripcion", "Precio", "Stock", "Rubro"
+            }
+        ));
+        jspTabla.setViewportView(jtTabla);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Productos en el sistema");
+
+        javax.swing.GroupLayout jpTablaLayout = new javax.swing.GroupLayout(jpTabla);
+        jpTabla.setLayout(jpTablaLayout);
+        jpTablaLayout.setHorizontalGroup(
+            jpTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jspTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
+            .addGroup(jpTablaLayout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpTablaLayout.setVerticalGroup(
+            jpTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTablaLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jspTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addComponent(jpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jpTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int seleccion = jtTabla.getSelectedRow();
+        if (seleccion != -1) {
+            int filaModelo = jtTabla.convertRowIndexToModel(seleccion);
+            int idABorrar = (int) jtTabla.getModel().getValueAt(filaModelo, 0); // Columna del ID
+
+            // El TreeSet usará compareTo() y al ver que los IDs coinciden (da 0), lo borrará
+            listaProductos.remove(new Producto(idABorrar));
+
+            // Borrar de la vista
+            ((DefaultTableModel) jtTabla.getModel()).removeRow(filaModelo);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jpButton;
+    private javax.swing.JPanel jpTabla;
+    private javax.swing.JScrollPane jspTabla;
+    private javax.swing.JTable jtTabla;
     // End of variables declaration//GEN-END:variables
 }

@@ -87,6 +87,7 @@ public class windo extends javax.swing.JFrame {
 
         eliminarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
         eliminarMenuItem.setText("Eliminar productos");
+        eliminarMenuItem.addActionListener(this::eliminarMenuItemActionPerformed);
         administracionMenu.add(eliminarMenuItem);
 
         MenuBarNavigator.add(administracionMenu);
@@ -147,6 +148,14 @@ public class windo extends javax.swing.JFrame {
         dtpEscritorio.add(va);
         dtpEscritorio.moveToFront(va);
     }//GEN-LAST:event_agregarMenuItemActionPerformed
+
+    private void eliminarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuItemActionPerformed
+dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
+        eliminar vistaEliminar  = new eliminar();
+        vistaEliminar.setVisible(true);
+        dtpEscritorio.add(vistaEliminar);
+        dtpEscritorio.moveToFront(vistaEliminar);    }//GEN-LAST:event_eliminarMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

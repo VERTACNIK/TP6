@@ -16,7 +16,13 @@ import jdk.jfr.Description;
  */
 public class agregar extends javax.swing.JInternalFrame {
 
-    private DefaultTableModel modelo = new DefaultTableModel();
+    private DefaultTableModel modelo = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+        
+    };
 
     /**
      * Creates new form internal1
@@ -94,7 +100,7 @@ public class agregar extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Precio");
 
-        cbRubro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comestible", "Limpieza", "Perfumeria", " " }));
+        cbRubro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comestible", "Limpieza", "Perfumeria" }));
         cbRubro.setToolTipText("");
         cbRubro.addActionListener(this::cbRubroActionPerformed);
 
