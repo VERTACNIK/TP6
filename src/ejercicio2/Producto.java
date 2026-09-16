@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ejercicio2;
 
 import java.util.Objects;
 
-/**
- *
- * @author Admin
- */
 public class Producto implements Comparable<Producto> {
 
     private int stock;
@@ -70,7 +62,7 @@ public class Producto implements Comparable<Producto> {
         this.rubro = rubro;
     }
 
-    
+    @Override
     public int compareTo(Producto otro) {
         // Ordena el TreeSet automáticamente por id_prod de forma ascendente
         return Integer.compare(this.id_prod, otro.id_prod);

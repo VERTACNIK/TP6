@@ -81,6 +81,7 @@ public class windo extends javax.swing.JFrame {
 
         modificarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/modi.png"))); // NOI18N
         modificarMenuItem.setText("Modificar produtos");
+        modificarMenuItem.addActionListener(this::modificarMenuItemActionPerformed);
         administracionMenu.add(modificarMenuItem);
 
         eliminarMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/unaX.png"))); // NOI18N
@@ -172,6 +173,15 @@ public class windo extends javax.swing.JFrame {
         dtpEscritorio.add(ve);
         dtpEscritorio.moveToFront(ve);
     }//GEN-LAST:event_precioMenuItemActionPerformed
+
+    private void modificarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarMenuItemActionPerformed
+        dtpEscritorio.removeAll();
+        dtpEscritorio.repaint();
+        Modificar modificar = new Modificar();
+        modificar.setVisible(true);
+        dtpEscritorio.add(modificar);
+        dtpEscritorio.moveToFront(modificar);
+    }//GEN-LAST:event_modificarMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
