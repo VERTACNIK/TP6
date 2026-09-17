@@ -126,7 +126,7 @@ public class ConsultaNombre extends javax.swing.JInternalFrame {
     private void filtrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtrarKeyReleased
         table.setNumRows(0);
         for (Producto producto : listaProductos) {
-            if (producto.getDescripcion().contains(filtrar.getText())) {
+            if (producto.getDescripcion().toLowerCase().contains(filtrar.getText().toLowerCase())) {
             table.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
             }
         }

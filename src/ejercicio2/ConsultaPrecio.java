@@ -163,15 +163,15 @@ public class ConsultaPrecio extends javax.swing.JInternalFrame {
         table.setNumRows(0);
         for (Producto producto : listaProductos) {
             double min = 0;
-            double max = Double.MAX_VALUE;
-            if (txtMin.getText().length()>0) {min = Double.parseDouble(txtMin.getText());}
-            if (txtMax.getText().length()>0) {max = Double.parseDouble(txtMax.getText());}
+            double max = Double.MAX_VALUE; 
+            if (txtMin.getText().length()>0) {try {min = Double.parseDouble(txtMin.getText());}catch(Exception e){}}
+            if (txtMax.getText().length()>0) {try {max = Double.parseDouble(txtMax.getText());}catch(Exception e){}}
             if (producto.getPrecio() >= min && producto.getPrecio() <= max) {
             table.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
             }
         }
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
