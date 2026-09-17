@@ -5,12 +5,12 @@ import java.util.Objects;
 public class Producto implements Comparable<Producto> {
 
     private int stock;
-    private int precio;
+    private double precio;
     private int id_prod;
     private String descripcion;
     private String rubro;
 
-    public Producto(int stock, int precio, int id_prod, String descripcion, String rubro) {
+    public Producto(int stock, double precio, int id_prod, String descripcion, String rubro) {
         this.stock = stock;
         this.precio = precio;
         this.id_prod = id_prod;
@@ -30,11 +30,11 @@ public class Producto implements Comparable<Producto> {
         this.stock = stock;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

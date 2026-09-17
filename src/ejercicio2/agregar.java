@@ -4,7 +4,7 @@
  */
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -14,7 +14,7 @@ import jdk.jfr.Description;
  *
  * @author Rafael
  */
-public class agregar extends javax.swing.JInternalFrame {
+public class Agregar extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel(){
         @Override
@@ -29,7 +29,7 @@ public class agregar extends javax.swing.JInternalFrame {
      *
      * @param listaProductos
      */
-    public agregar(TreeSet<Producto> listaProductos) {
+    public Agregar(TreeSet<Producto> listaProductos) {
         initComponents();
         armarCabecera();
         recorrerTabla();
@@ -241,7 +241,7 @@ public class agregar extends javax.swing.JInternalFrame {
         try {
             int idCodigo = Integer.parseInt(txtId.getText());
             int stock = (Integer) jsStock.getValue();
-            int precio = Integer.parseInt(txtPrecio.getText());
+            double precio = Double.parseDouble(txtPrecio.getText());
             String descripcion = txtDescripcion.getText();
             String rubro = (String) cbRubro.getSelectedItem();
             Producto p = new Producto(stock, precio, idCodigo, descripcion, rubro);

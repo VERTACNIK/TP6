@@ -9,16 +9,16 @@ import javax.swing.JLabel;
  *
  * @author Rafael
  */
-public class windo extends javax.swing.JFrame {
+public class MenuPrincipal extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(windo.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuPrincipal.class.getName());
 
     /**
-     * Creates new form windo
+     * Creates new form MenuPrincipal
      */
     public static TreeSet<Producto> listaProductos = new TreeSet<>();
     
-    public windo() {
+    public MenuPrincipal() {
         initComponents();
         Ventana();
     }
@@ -132,7 +132,7 @@ public class windo extends javax.swing.JFrame {
     private void nombreMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreMenuItemActionPerformed
         dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        consultanombre ve  = new consultanombre();
+        ConsultaNombre ve  = new ConsultaNombre();
         ve.setVisible(true);
         dtpEscritorio.add(ve);
         dtpEscritorio.moveToFront(ve);
@@ -141,7 +141,7 @@ public class windo extends javax.swing.JFrame {
     private void agregarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMenuItemActionPerformed
         dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        agregar va  = new agregar(listaProductos);
+        Agregar va  = new Agregar(listaProductos);
         va.setVisible(true);
         dtpEscritorio.add(va);
         dtpEscritorio.moveToFront(va);
@@ -150,7 +150,7 @@ public class windo extends javax.swing.JFrame {
     private void eliminarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuItemActionPerformed
         dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        eliminar vistaEliminar = new eliminar();
+        Eliminar vistaEliminar = new Eliminar();
         vistaEliminar.setVisible(true);
         dtpEscritorio.add(vistaEliminar);
         dtpEscritorio.moveToFront(vistaEliminar);
@@ -159,7 +159,7 @@ public class windo extends javax.swing.JFrame {
     private void rubroMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rubroMenuItemActionPerformed
         dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        consultarubro ve = new consultarubro();
+        ConsultaRubro ve = new ConsultaRubro();
         ve.setVisible(true);
         dtpEscritorio.add(ve);
         dtpEscritorio.moveToFront(ve);
@@ -168,7 +168,7 @@ public class windo extends javax.swing.JFrame {
     private void precioMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioMenuItemActionPerformed
         dtpEscritorio.removeAll();
         dtpEscritorio.repaint();
-        consultaprecio ve = new consultaprecio();
+        ConsultaPrecio ve = new ConsultaPrecio();
         ve.setVisible(true);
         dtpEscritorio.add(ve);
         dtpEscritorio.moveToFront(ve);
@@ -205,7 +205,7 @@ public class windo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new windo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new MenuPrincipal().setVisible(true));
         
         Producto a = new Producto(5, 2000, 1, "un chupetin", "Comestible");
         Producto b = new Producto(4, 3000, 2, "un alfajor", "Comestible");

@@ -1,7 +1,7 @@
 
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import java.util.Iterator;
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
@@ -11,14 +11,14 @@ import javax.swing.table.TableColumnModel;
  *
  * @author Rafael
  */
-public class consultanombre extends javax.swing.JInternalFrame {
+public class ConsultaNombre extends javax.swing.JInternalFrame {
 
     DefaultTableModel table = new DefaultTableModel();
 
     /**
      * Creates new form conslutanombre
      */
-    public consultanombre() {
+    public ConsultaNombre() {
         initComponents();
         table.addColumn("ID");
         table.addColumn("Descripcion");

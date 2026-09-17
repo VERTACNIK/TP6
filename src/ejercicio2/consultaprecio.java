@@ -1,7 +1,7 @@
 
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import java.util.Iterator;
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
@@ -11,14 +11,14 @@ import javax.swing.table.TableColumnModel;
  *
  * @author Rafael
  */
-public class consultaprecio extends javax.swing.JInternalFrame {
+public class ConsultaPrecio extends javax.swing.JInternalFrame {
 
     DefaultTableModel table = new DefaultTableModel();
 
     /**
      * Creates new form conslutanombre
      */
-    public consultaprecio() {
+    public ConsultaPrecio() {
         initComponents();
         table.addColumn("ID");
         table.addColumn("Descripcion");
@@ -147,14 +147,14 @@ public class consultaprecio extends javax.swing.JInternalFrame {
     
     private void txtMinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMinKeyReleased
         String input = txtMin.getText();
-        input = input.replaceAll("[^0-9]", "");
+        input = input.replaceAll("[^0-9.]", "");
         txtMin.setText(input);
         filtrarPrecio();
     }//GEN-LAST:event_txtMinKeyReleased
 
     private void txtMaxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMaxKeyReleased
         String input = txtMax.getText();
-        input = input.replaceAll("[^0-9]", "");
+        input = input.replaceAll("[^0-9.]", "");
         txtMax.setText(input);
         filtrarPrecio();
     }//GEN-LAST:event_txtMaxKeyReleased
@@ -162,10 +162,10 @@ public class consultaprecio extends javax.swing.JInternalFrame {
     private void filtrarPrecio(){
         table.setNumRows(0);
         for (Producto producto : listaProductos) {
-            int min = 0;
-            int max = Integer.MAX_VALUE;
-            if (txtMin.getText().length()>0) {min = Integer.parseInt(txtMin.getText());}
-            if (txtMax.getText().length()>0) {max = Integer.parseInt(txtMax.getText());}
+            double min = 0;
+            double max = Double.MAX_VALUE;
+            if (txtMin.getText().length()>0) {min = Double.parseDouble(txtMin.getText());}
+            if (txtMax.getText().length()>0) {max = Double.parseDouble(txtMax.getText());}
             if (producto.getPrecio() >= min && producto.getPrecio() <= max) {
             table.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
             }

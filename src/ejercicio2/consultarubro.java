@@ -1,7 +1,7 @@
 
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import java.util.Iterator;
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
@@ -11,14 +11,14 @@ import javax.swing.table.TableColumnModel;
  *
  * @author Rafael
  */
-public class consultarubro extends javax.swing.JInternalFrame {
+public class ConsultaRubro extends javax.swing.JInternalFrame {
 
     DefaultTableModel table = new DefaultTableModel();
 
     /**
      * Creates new form conslutanombre
      */
-    public consultarubro() {
+    public ConsultaRubro() {
         initComponents();
         table.addColumn("ID");
         table.addColumn("Descripcion");
@@ -111,9 +111,10 @@ public class consultarubro extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(7, Short.MAX_VALUE))

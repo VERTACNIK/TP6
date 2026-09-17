@@ -1,6 +1,6 @@
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -49,7 +49,7 @@ public class Modificar extends javax.swing.JInternalFrame {
         
         String filtro = (String) cmbFiltro.getSelectedItem();
         
-        for (Producto aux : windo.listaProductos) {
+        for (Producto aux : MenuPrincipal.listaProductos) {
             
             if (aux.getRubro().equalsIgnoreCase(filtro)) {
                 modelo.addRow(new Object[]{aux.getId_prod(), aux.getDescripcion(), aux.getPrecio(), aux.getStock()});

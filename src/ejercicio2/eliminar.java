@@ -4,14 +4,14 @@
  */
 package ejercicio2;
 
-import static ejercicio2.windo.listaProductos;
+import static ejercicio2.MenuPrincipal.listaProductos;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Rafael
  */
-public class eliminar extends javax.swing.JInternalFrame {
+public class Eliminar extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel() {
         @Override
@@ -25,7 +25,7 @@ public class eliminar extends javax.swing.JInternalFrame {
     /**
      * Creates new form eliminar
      */
-    public eliminar() {
+    public Eliminar() {
         initComponents();
         armarCabecera();
         recorrerTabla();
