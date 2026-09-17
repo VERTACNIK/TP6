@@ -275,18 +275,17 @@ public class Modificar extends javax.swing.JInternalFrame {
         }
         
         int codigo;
-        int precio;
+        double precio;
         
         try {
             
             codigo = Integer.parseInt(txtCodigo.getText());
-            precio = Integer.parseInt(txtPrecio.getText());
             
         } catch (NumberFormatException numberFormat) {
-            JOptionPane.showMessageDialog(this, "Código id y precio deben ser números enteros menor a ocho dígitos.", "Error de datos", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Código id debe ser un número entero menor a ocho dígitos.", "Error de datos", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        /*
+        
         try {
             
             precio = Double.parseDouble(txtPrecio.getText());
@@ -295,9 +294,9 @@ public class Modificar extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Precio debe ser un número entero o decimal.", "Error de datos", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        */
+        
         int stockExis = Integer.parseInt(String.valueOf(tblProductos.getValueAt(tblProductos.getSelectedRow(), 3)));
-        int precioExis = Integer.parseInt(String.valueOf(tblProductos.getValueAt(tblProductos.getSelectedRow(), 2)));
+        double precioExis = Double.parseDouble(String.valueOf(tblProductos.getValueAt(tblProductos.getSelectedRow(), 2)));
         int codigoExis = Integer.parseInt(String.valueOf(tblProductos.getValueAt(tblProductos.getSelectedRow(), 0)));
         String descripcionExis = (String) tblProductos.getValueAt(tblProductos.getSelectedRow(), 1);
         String rubroExis = String.valueOf(cmbFiltro.getSelectedItem());
