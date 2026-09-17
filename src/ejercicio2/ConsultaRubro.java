@@ -34,7 +34,9 @@ public class ConsultaRubro extends javax.swing.JInternalFrame {
 
     private void recorrerTabla(){
         for (Producto producto : listaProductos) {
+            if (producto.getRubro().equalsIgnoreCase(jComboBox1.getSelectedItem().toString())) {
             table.addRow(new Object[]{producto.getId_prod(), producto.getDescripcion(), producto.getPrecio(), producto.getStock(), producto.getRubro()});
+            }
         }
     }
     
