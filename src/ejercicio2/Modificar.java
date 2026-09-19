@@ -81,7 +81,7 @@ public class Modificar extends javax.swing.JInternalFrame {
         tblProductos = new javax.swing.JTable();
 
         setClosable(true);
-        setTitle("De Todo S.A: Modificar Produtos");
+        setTitle("De Todo S.A.: Modificar Produtos");
 
         pnlDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 

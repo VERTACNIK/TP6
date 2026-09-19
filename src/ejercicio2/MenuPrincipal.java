@@ -45,6 +45,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         rubroMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("De Todo S.A");
         setMaximumSize(new java.awt.Dimension(875, 680));
         setMinimumSize(new java.awt.Dimension(554, 554));
         setResizable(false);
